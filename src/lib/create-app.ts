@@ -17,13 +17,13 @@ export function createRouter() {
 
 export default function createApp() {
   const app = createRouter();
+
   app.use((c, next) => {
     c.env = parseEnv(Object.assign(c.env || {}, process.env));
     return next();
   });
   app.use(serveEmojiFavicon("📝"));
   app.use(pinoLogger());
-
   app.notFound(notFound);
   app.onError(onError);
 

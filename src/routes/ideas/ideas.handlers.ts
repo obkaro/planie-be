@@ -14,6 +14,7 @@ export const generateIdeas: RouteHandler<
   GenerateIdeasRoute,
   AppBindings
 > = async (c) => {
+  console.log("generateIdeas");
   const prompt =
     `Generate ideas for a trip with the following details:` +
     `${JSON.stringify(c.req.valid("json"))}`;

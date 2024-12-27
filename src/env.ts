@@ -13,6 +13,7 @@ const EnvSchema = z.object({
   ]),
   PORT: z.coerce.number().default(3000),
   OPENAI_API_KEY: z.string(),
+  CLIENT_API_KEY: z.string(),
 });
 
 export type Environment = z.infer<typeof EnvSchema>;
